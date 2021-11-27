@@ -115,7 +115,9 @@ export default {
 
     return {
       totalEarning,
-      icons: { mdiDotsVertical, mdiMenuUp },
+      icons: {
+        mdiDotsVertical, mdiMenuUp,
+      },
     }
   },
 }

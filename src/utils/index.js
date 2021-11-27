@@ -16,7 +16,9 @@ export const useRouter = () => {
     },
   )
 
-  return { ...toRefs(state), router: vm.$router }
+  return {
+    ...toRefs(state), router: vm.$router,
+  }
 }
 
 export const _ = null

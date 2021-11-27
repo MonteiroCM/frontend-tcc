@@ -71,7 +71,8 @@ export default {
     DemoSimpleTableFixedHeader,
   },
   setup() {
-    return {}
+    return {
+    }
   },
 }
 </script>

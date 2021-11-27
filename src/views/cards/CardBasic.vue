@@ -439,8 +439,7 @@
 
 <script>
 import { ref } from '@vue/composition-api'
-import {
-  mdiChevronUp,
+import { mdiChevronUp,
   mdiChevronDown,
   mdiCartPlus,
   mdiShareVariantOutline,
@@ -448,8 +447,7 @@ import {
   mdiStarOutline,
   mdiAccountOutline,
   mdiTrendingUp,
-  mdiHelpCircleOutline,
-} from '@mdi/js'
+  mdiHelpCircleOutline } from '@mdi/js'
 
 export default {
   setup() {

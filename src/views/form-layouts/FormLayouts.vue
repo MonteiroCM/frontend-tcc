@@ -80,7 +80,8 @@ export default {
     DemoFormLayoutMultipleColumn,
   },
   setup() {
-    return {}
+    return {
+    }
   },
 }
 </script>

@@ -18,7 +18,9 @@ export const ActionCriarCategoria = (context, payload) => {
   const { nome } = payload
   console.log('ActionCriarCategoria', nome)
 
-  return services.addCategorias({ nome: nome.nome, ativo: nome.ativo }).then(res => {
+  return services.addCategorias({
+    nome: nome.nome, ativo: nome.ativo,
+  }).then(res => {
     commit(types.SET_CATEGORIA, res.data)
   })
 }
@@ -28,7 +30,9 @@ export const ActionDeleteCategoria = (context, payload) => {
   const { id } = payload
   console.log('ActionDeleteCategoria', id)
 
-  return services.deleteCategorias({ id }).then(res => {
+  return services.deleteCategorias({
+    id,
+  }).then(res => {
     commit(types.SET_CATEGORIA, res.data)
   })
 }
@@ -39,7 +43,9 @@ export const ActionUpdateCategoria = (context, payload) => {
   console.log('ActionUpdateCategoria - categoria', categoria)
   console.log('ActionUpdateCategoria - id', id)
 
-  return services.updateCategorias({ categoria }).then(res => {
+  return services.updateCategorias({
+    categoria,
+  }).then(res => {
     commit(types.SET_CATEGORIA, res.data)
   })
 }

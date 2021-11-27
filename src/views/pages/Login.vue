@@ -14,14 +14,20 @@
               class="me-3"
             ></v-img>
 
-            <h2 class="text-2xl font-weight-semibold">NeedFood</h2>
+            <h2 class="text-2xl font-weight-semibold">
+              NeedFood
+            </h2>
           </router-link>
         </v-card-title>
 
         <!-- title -->
         <v-card-text>
-          <p class="text-2xl font-weight-semibold text--primary mb-2">Bem-vindo! 🍔</p>
-          <p class="mb-2">Entre e começe sua experiência culinária.</p>
+          <p class="text-2xl font-weight-semibold text--primary mb-2">
+            Bem-vindo! 🍔
+          </p>
+          <p class="mb-2">
+            Entre e começe sua experiência culinária.
+          </p>
         </v-card-text>
 
         <!-- login form -->
@@ -48,20 +54,25 @@
             ></v-text-field>
 
             <div class="d-flex align-center justify-space-between flex-wrap">
-              <v-checkbox label="lembrar" hide-details class="me-3 mt-1"> </v-checkbox>
+              <v-checkbox label="lembrar" hide-details class="me-3 mt-1">
+              </v-checkbox>
 
               <!-- forgot link -->
               <a href="javascript:void(0)" class="mt-1"> Esqueceu a senha? </a>
             </div>
 
-            <v-btn block color="primary" class="mt-6" @click="submit"> Login </v-btn>
+            <v-btn block color="primary" class="mt-6" @click="submit">
+              Login
+            </v-btn>
           </v-form>
         </v-card-text>
 
         <!-- create new account  -->
         <v-card-text class="d-flex align-center justify-center flex-wrap mt-2">
           <span class="me-2"> Novo aqui ? </span>
-          <router-link :to="{ name: 'pages-register' }"> Criar uma conta </router-link>
+          <router-link :to="{ name: 'pages-register' }">
+            Criar uma conta
+          </router-link>
         </v-card-text>
 
         <!-- divider -->
@@ -153,7 +164,9 @@ export default {
       console.log('this.email ->', this.email)
       try {
         await this.ActionDoLogin(this.user)
-        this.$router.push({ name: 'dashboard' })
+        this.$router.push({
+          name: 'dashboard',
+        })
       } catch (error) {
         console.log('error', error)
         this.error = error.data ? error.data.message : 'Não foi possivel conectar'

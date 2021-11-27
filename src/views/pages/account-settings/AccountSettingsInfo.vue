@@ -151,7 +151,9 @@ export default {
       optionsLocal.value = JSON.parse(JSON.stringify(props.informationData))
     }
 
-    return { optionsLocal, resetForm }
+    return {
+      optionsLocal, resetForm,
+    }
   },
 }
 </script>

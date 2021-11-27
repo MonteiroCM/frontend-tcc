@@ -51,12 +51,24 @@ import { mdiDotsVertical } from '@mdi/js'
 
 export default {
   props: {
-    statTitle: { type: String, default: '' },
-    icon: { type: String, default: '' },
-    color: { type: String, default: '' },
-    subtitle: { type: String, default: '' },
-    statistics: { type: String, default: '' },
-    change: { type: String, default: '' },
+    statTitle: {
+      type: String, default: '',
+    },
+    icon: {
+      type: String, default: '',
+    },
+    color: {
+      type: String, default: '',
+    },
+    subtitle: {
+      type: String, default: '',
+    },
+    statistics: {
+      type: String, default: '',
+    },
+    change: {
+      type: String, default: '',
+    },
   },
   setup() {
     const checkChange = value => {
