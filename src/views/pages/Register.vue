@@ -18,7 +18,7 @@
             ></v-img>
 
             <h2 class="text-2xl font-weight-semibold">
-              Materio
+              NEED FOOD
             </h2>
           </router-link>
         </v-card-title>
@@ -26,10 +26,10 @@
         <!-- title -->
         <v-card-text>
           <p class="text-2xl font-weight-semibold text--primary mb-2">
-            Adventure starts here 🚀
+            Sua aventura gastronômica começa aqui 🚀
           </p>
           <p class="mb-2">
-            Make your app management easy and fun!
+            Faça suas compras com segurança
           </p>
         </v-card-text>
 
@@ -65,7 +65,7 @@
               @click:append="isPasswordVisible = !isPasswordVisible"
             ></v-text-field>
 
-            <v-checkbox
+            <!--<v-checkbox
               hide-details
               class="mt-1"
             >
@@ -74,7 +74,7 @@
                   <span class="me-2">I agree to</span><a href="javascript:void(0)">privacy policy &amp; terms</a>
                 </div>
               </template>
-            </v-checkbox>
+            </v-checkbox>-->
 
             <v-btn
               block
@@ -86,7 +86,7 @@
           </v-form>
         </v-card-text>
 
-        <!-- create new account  -->
+        <!-- create new account
         <v-card-text class="d-flex align-center justify-center flex-wrap mt-2">
           <span class="me-2">
             Already have an account?
@@ -94,7 +94,7 @@
           <router-link :to="{ name:'pages-login' }">
             Sign in instead
           </router-link>
-        </v-card-text>
+        </v-card-text>-->
 
         <!-- divider -->
         <v-card-text class="d-flex align-center mt-2">
@@ -146,7 +146,7 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
+import { mdiGoogle, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 import { ref } from '@vue/composition-api'
 
 export default {
@@ -156,21 +156,6 @@ export default {
     const email = ref('')
     const password = ref('')
     const socialLink = [
-      {
-        icon: mdiFacebook,
-        color: '#4267b2',
-        colorInDark: '#4267b2',
-      },
-      {
-        icon: mdiTwitter,
-        color: '#1da1f2',
-        colorInDark: '#1da1f2',
-      },
-      {
-        icon: mdiGithub,
-        color: '#272727',
-        colorInDark: '#fff',
-      },
       {
         icon: mdiGoogle,
         color: '#db4437',

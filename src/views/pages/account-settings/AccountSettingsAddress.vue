@@ -78,11 +78,24 @@
                         <v-row>
                           <v-col>
                             <v-text-field
-                              v-model="editedItem.cep"
+                              v-model="editedItem.bairro"
                               label="bairro"
                               outlined
                               dense
                               placeholder="Bairro"
+                              hide-details
+                              full-width
+                            ></v-text-field>
+                          </v-col>
+                        </v-row>
+                        <v-row>
+                          <v-col>
+                            <v-text-field
+                              v-model="editedItem.cidade"
+                              label="Cidade"
+                              outlined
+                              dense
+                              placeholder="Cidade"
                               hide-details
                               full-width
                             ></v-text-field>
@@ -152,7 +165,6 @@
 <script>
 // eslint-disable-next-line object-curly-newline
 import { mdiKeyOutline, mdiLockOpenOutline, mdiEyeOffOutline, mdiEyeOutline, mdiPencil, mdiDelete } from '@mdi/js'
-import { ref } from '@vue/composition-api'
 import { mapActions, mapState } from 'vuex'
 import nodata from '../../../components/no-data.vue'
 
@@ -168,13 +180,6 @@ export default {
     },
   },
   setup() {
-    const isCurrentPasswordVisible = ref(false)
-    const isNewPasswordVisible = ref(false)
-    const isCPasswordVisible = ref(false)
-    const currentPassword = ref('12345678')
-    const newPassword = ref('87654321')
-    const cPassword = ref('87654321')
-
     return {
       dialog: false,
       dialogDelete: false,
@@ -216,12 +221,6 @@ export default {
           sortable: false,
         },
       ],
-      isCurrentPasswordVisible,
-      isNewPasswordVisible,
-      currentPassword,
-      isCPasswordVisible,
-      newPassword,
-      cPassword,
       icons: {
         mdiKeyOutline,
         mdiLockOpenOutline,
@@ -305,8 +304,9 @@ export default {
     save() {
       console.log('save')
       if (!this.editedItem.id) {
+        console.log(this.editedItem)
         this.ActionCriarEndereco({
-          nome: this.editedItem,
+          endereco: this.editedItem,
         })
       } else {
         this.ActionUpdateEndereco({

@@ -67,9 +67,6 @@ export default {
       {
         title: 'Endereços', icon: mdiLockOpenOutline,
       },
-      {
-        title: 'Formas de pagamento', icon: mdiInformationOutline,
-      },
     ]
 
     return {

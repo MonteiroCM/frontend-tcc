@@ -3,7 +3,8 @@ import store from '../store'
 export default async (to, from, next) => {
   document.title = to.name
   console.log(to.name, to.meta.auth)
-  if (to.name !== 'pages-login' && !store.getters['auth/hasToken']) {
+
+  if (to.name !== 'pages-login' && to.name !== 'pages-register' && !store.getters['auth/hasToken']) {
     try {
       await store.dispatch('auth/ActionCheckToken')
 
@@ -18,6 +19,10 @@ export default async (to, from, next) => {
   } else if (to.name === 'pages-login' && store.getters['auth/hasToken']) {
     next({
       name: 'dashboard',
+    })
+  } else if (to.name === 'pages-register' && store.getters['auth/hasToken']) {
+    next({
+      name: 'pages-register',
     })
   } else {
     next()

@@ -82,7 +82,7 @@
             </v-alert>
           </v-col>
 
-          <v-col cols="12">
+          <!-- <v-col cols="12">
             <v-btn
               color="primary"
               class="me-3 mt-4"
@@ -98,7 +98,7 @@
             >
               Cancelar
             </v-btn>
-          </v-col>
+          </v-col> -->
         </v-row>
       </v-form>
     </v-card-text>

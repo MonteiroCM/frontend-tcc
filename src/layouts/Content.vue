@@ -15,20 +15,12 @@
             class="d-block d-lg-none me-2"
             @click="isDrawerOpen = !isDrawerOpen"
           ></v-app-bar-nav-icon>
-          <v-text-field
-            rounded
-            dense
-            outlined
-            :prepend-inner-icon="icons.mdiMagnify"
-            class="app-bar-search flex-grow-0"
-            hide-details
-          ></v-text-field>
 
           <v-spacer></v-spacer>
 
           <!-- Right Content -->
           <a
-            href="https://github.com/themeselection/materio-vuetify-vuejs-admin-template-free"
+            href=""
             target="_blank"
             rel="nofollow"
           >
@@ -37,15 +29,6 @@
             </v-icon>
           </a>
           <theme-switcher></theme-switcher>
-          <v-btn
-            icon
-            small
-            class="ms-3"
-          >
-            <v-icon>
-              {{ icons.mdiBellOutline }}
-            </v-icon>
-          </v-btn>
           <app-bar-user-menu></app-bar-user-menu>
         </div>
       </div>
@@ -69,26 +52,16 @@
         <div class="mx-6 d-flex justify-space-between">
           <span>
             &copy; 2021 <a
-              href="https://themeselection.com"
+              href=""
               class="text-decoration-none"
               target="_blank"
-            >ThemeSelection</a></span>
+            >PUC MINAS</a></span>
           <span class="d-sm-inline d-none">
             <a
-              href="https://themeselection.com/products/category/download-free-admin-templates/"
-              target="_blank"
-              class="me-6 text--secondary text-decoration-none"
-            >Freebies</a>
-            <a
-              href="https://themeselection.com/blog/"
-              target="_blank"
-              class="me-6 text--secondary text-decoration-none"
-            >Blog</a>
-            <a
-              href="https://github.com/themeselection/materio-vuetify-vuejs-admin-template-free/blob/main/LICENSE"
+              href=""
               target="_blank"
               class="text--secondary text-decoration-none"
-            >MIT Licence</a>
+            >Desenvolvedor</a>
           </span>
         </div>
       </div>

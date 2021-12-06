@@ -93,9 +93,7 @@
           </div>
         </template>
         <template v-slot:no-data>
-          <v-btn color="primary" @click="initialize">
-            {{ icons.mdiDelete }}
-          </v-btn>
+          <nodata></nodata>
         </template>
       </v-data-table>
     </v-card>
@@ -105,8 +103,12 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 import { mdiPencil, mdiDelete } from '@mdi/js'
+import nodata from '../../components/no-data.vue'
 
 export default {
+  components: {
+    nodata,
+  },
   data: () => ({
     nome: '',
     dialog: false,

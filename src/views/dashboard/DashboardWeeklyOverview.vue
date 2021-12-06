@@ -1,35 +1,58 @@
 <template>
-  <v-card>
-    <v-card-title class="align-start">
-      <span>Weekly Overview</span>
+  <div>
+    <v-card>
+      <v-card-title class="align-start">
+        <span>Vendas Mensais</span>
 
-      <v-spacer></v-spacer>
+        <v-spacer></v-spacer>
 
-      <v-btn
-        icon
-        small
-        class="mt-n2 me-n3"
-      >
-        <v-icon size="22">
-          {{ icons.mdiDotsVertical }}
-        </v-icon>
-      </v-btn>
-    </v-card-title>
+        <v-btn
+          icon
+          small
+          class="mt-n2 me-n3"
+        >
+          <v-icon size="22">
+            {{ icons.mdiDotsVertical }}
+          </v-icon>
+        </v-btn>
+      </v-card-title>
 
-    <v-card-text>
-      <!-- Chart -->
-      <vue-apex-charts
-        :options="chartOptions"
-        :series="chartData"
-        height="210"
-      ></vue-apex-charts>
-      <vue-apex-charts
-        :options="chartOptions"
-        :series="chartData"
-        height="210"
-      ></vue-apex-charts>
-    </v-card-text>
-  </v-card>
+      <v-card-text>
+        <!-- Chart -->
+        <vue-apex-charts
+          :options="chartOptions"
+          :series="chartData"
+          height="210"
+        ></vue-apex-charts>
+      </v-card-text>
+    </v-card>
+    <v-card>
+      <v-card-title class="align-start">
+        <span>Weekly Overview</span>
+
+        <v-spacer></v-spacer>
+
+        <v-btn
+          icon
+          small
+          class="mt-n2 me-n3"
+        >
+          <v-icon size="22">
+            {{ icons.mdiDotsVertical }}
+          </v-icon>
+        </v-btn>
+      </v-card-title>
+
+      <v-card-text>
+        <!-- Chart -->
+        <vue-apex-charts
+          :options="chartOptions"
+          :series="chartData"
+          height="210"
+        ></vue-apex-charts>
+      </v-card-text>
+    </v-card>
+  </div>
 </template>
 
 <script>

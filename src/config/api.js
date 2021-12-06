@@ -2,7 +2,7 @@ import axios from 'axios'
 import * as storage from '../storage'
 
 const http = axios.create({
-  baseURL: 'http://localhost:8086',
+  baseURL: 'http://localhost:5000/',
 })
 
 // eslint-disable-next-line consistent-return

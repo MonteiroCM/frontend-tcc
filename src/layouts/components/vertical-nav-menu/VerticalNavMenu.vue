@@ -11,18 +11,9 @@
     <!-- Navigation Header -->
     <div class="vertical-nav-header d-flex items-center ps-6 pe-5 pt-5 pb-2">
       <router-link to="/" class="d-flex align-center text-decoration-none">
-        <v-img
-          :src="require('@/assets/images/logos/logo.svg')"
-          max-height="30px"
-          max-width="30px"
-          alt="logo"
-          contain
-          eager
-          class="app-logo me-3"
-        ></v-img>
         <v-slide-x-transition>
           <h2 class="app-title text--primary">
-            MATERIO
+            🍔 NEED FOOD
           </h2>
         </v-slide-x-transition>
       </router-link>
@@ -32,36 +23,23 @@
     <v-list expand shaped class="vertical-nav-menu-items pr-5">
       <nav-menu-link title="Menu" :to="{ name: 'loja' }" :icon="icons.mdiHomeOutline"></nav-menu-link>
       <nav-menu-link title="Dashboard" :to="{ name: 'dashboard' }" :icon="icons.mdiHomeOutline"></nav-menu-link>
-      <nav-menu-link title="Pedidos" :to="{ name: 'pedidos' }" :icon="icons.mdiArchive"></nav-menu-link>
-      <nav-menu-link title="Categorias" :to="{ name: 'categorias' }" :icon="icons.mdiCreditCardOutline"></nav-menu-link>
-      <nav-menu-link title="Tamanhos" :to="{ name: 'tamanhos' }" :icon="icons.mdiArchive"></nav-menu-link>
-      <nav-menu-link title="Produto" :to="{ name: 'produtos' }" :icon="icons.mdiCreditCardOutline"></nav-menu-link>
-      <nav-menu-link title="Vendas" :to="{ name: 'itemvenda' }" :icon="icons.mdiArchive"></nav-menu-link>
-      <nav-menu-link title="Cliente" :to="{ name: 'clientes' }" :icon="icons.mdiArchive"></nav-menu-link>
+      <nav-menu-link v-if="user.tipo == 'ADMIN'" title="Pedidos" :to="{ name: 'pedidos' }" :icon="icons.mdiArchive"></nav-menu-link>
+      <nav-menu-link v-if="user.tipo == 'ADMIN'" title="Categorias" :to="{ name: 'categorias' }" :icon="icons.mdiCreditCardOutline"></nav-menu-link>
+      <nav-menu-link v-if="user.tipo == 'ADMIN'" title="Tamanhos" :to="{ name: 'tamanhos' }" :icon="icons.mdiArchive"></nav-menu-link>
+      <nav-menu-link v-if="user.tipo == 'ADMIN'" title="Produto" :to="{ name: 'produtos' }" :icon="icons.mdiCreditCardOutline"></nav-menu-link>
+      <nav-menu-link v-if="user.tipo == 'ADMIN'" title="Vendas" :to="{ name: 'itemvenda' }" :icon="icons.mdiArchive"></nav-menu-link>
+      <nav-menu-link v-if="user.tipo == 'ADMIN'" title="Cliente" :to="{ name: 'clientes' }" :icon="icons.mdiArchive"></nav-menu-link>
       <nav-menu-link
         title="Perfil"
         :to="{ name: 'pages-account-settings' }"
         :icon="icons.mdiAccountCogOutline"
       ></nav-menu-link>
-      <nav-menu-group title="Pages" :icon="icons.mdiFileOutline">
-        <nav-menu-link title="Login" :to="{ name: 'pages-login' }" target="_blank"></nav-menu-link>
-        <nav-menu-link title="Register" :to="{ name: 'pages-register' }" target="_blank"></nav-menu-link>
-        <nav-menu-link title="Error" :to="{ name: 'error-404' }" target="_blank"></nav-menu-link>
-        <nav-menu-link
-          title="Typography"
-          :to="{ name: 'typography' }"
-          :icon="icons.mdiAlphaTBoxOutline"
-        ></nav-menu-link>
-        <nav-menu-link title="Icons" :to="{ name: 'icons' }" :icon="icons.mdiEyeOutline"></nav-menu-link>
-        <nav-menu-link title="Cards" :to="{ name: 'cards' }" :icon="icons.mdiCreditCardOutline"></nav-menu-link>
-        <nav-menu-link title="Tables" :to="{ name: 'simple-table' }" :icon="icons.mdiTable"></nav-menu-link>
-        <nav-menu-link title="Form Layouts" :to="{ name: 'form-layouts' }" :icon="icons.mdiFormSelect"></nav-menu-link>
-      </nav-menu-group>
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 // eslint-disable-next-line object-curly-newline
 import {
   mdiArchive,
@@ -73,12 +51,11 @@ import {
   mdiFileOutline,
   mdiFormSelect,
   mdiAccountCogOutline } from '@mdi/js'
-import NavMenuGroup from './components/NavMenuGroup.vue'
+
 import NavMenuLink from './components/NavMenuLink.vue'
 
 export default {
   components: {
-    NavMenuGroup,
     NavMenuLink,
   },
   props: {
@@ -102,6 +79,9 @@ export default {
       },
     }
   },
+  computed: {
+    ...mapState('auth', ['user']),
+  },
 }
 </script>
 
@@ -114,8 +94,6 @@ export default {
   line-height: normal;
   letter-spacing: 0.3px;
 }
-
-// ? Adjust this `translateX` value to keep logo in center when vertical nav menu is collapsed (Value depends on your logo)
 .app-logo {
   transition: all 0.18s ease-in-out;
   .v-navigation-drawer--mini-variant & {
@@ -139,8 +117,6 @@ export default {
   }
 }
 
-// You can remove below style
-// Upgrade Banner
 .app-navigation-menu {
   .upgrade-banner {
     position: absolute;

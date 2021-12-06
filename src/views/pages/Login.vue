@@ -54,11 +54,11 @@
             ></v-text-field>
 
             <div class="d-flex align-center justify-space-between flex-wrap">
-              <v-checkbox label="lembrar" hide-details class="me-3 mt-1">
-              </v-checkbox>
+              <!--<v-checkbox label="lembrar" hide-details class="me-3 mt-1">
+              </v-checkbox>-->
 
-              <!-- forgot link -->
-              <a href="javascript:void(0)" class="mt-1"> Esqueceu a senha? </a>
+              <!-- forgot link
+              <a href="javascript:void(0)" class="mt-1"> Esqueceu a senha? </a>  -->
             </div>
 
             <v-btn block color="primary" class="mt-6" @click="submit">
@@ -75,21 +75,21 @@
           </router-link>
         </v-card-text>
 
-        <!-- divider -->
+        <!-- divider
         <v-card-text class="d-flex align-center mt-2">
           <v-divider></v-divider>
           <span class="mx-5">or</span>
           <v-divider></v-divider>
-        </v-card-text>
+        </v-card-text> -->
 
-        <!-- social links -->
+        <!-- social links
         <v-card-actions class="d-flex justify-center">
           <v-btn v-for="link in socialLink" :key="link.icon" icon class="ms-1">
             <v-icon :color="$vuetify.theme.dark ? link.colorInDark : link.color">
               {{ link.icon }}
             </v-icon>
           </v-btn>
-        </v-card-actions>
+        </v-card-actions>-->
       </v-card>
     </div>
 
@@ -113,7 +113,7 @@ export default {
     isLogin: true,
     isLoading: false,
     user: {
-      email: 'Alessandro.Nogueira68@live.com',
+      email: 'Admin@admin.com.br',
       password: '123456',
       nome: '',
     },

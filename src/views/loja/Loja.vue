@@ -158,7 +158,7 @@
         <v-card class="d-flex align-center">
           <div class="d-flex justify-space-between flex-wrap flex-md-nowrap flex-column flex-md-row">
             <div class="mx-auto">
-              <v-img width="220" height="100%" :src="'http://localhost:8086/resources/static/assets/uploads/' + itemvenda.produtos.id + '.' + itemvenda.produtos.imagem"></v-img>
+              <v-img width="220" height="100%" :src="'http://18.117.219.250:5000/resources/static/assets/uploads/' + itemvenda.produtos.id + '.' + itemvenda.produtos.imagem"></v-img>
             </div>
             <v-divider :vertical="$vuetify.breakpoint.mdAndUp"></v-divider>
             <div>
