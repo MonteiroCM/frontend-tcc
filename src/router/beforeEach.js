@@ -6,6 +6,7 @@ export default async (to, from, next) => {
 
   if (to.name !== 'pages-login' && to.name !== 'pages-register' && !store.getters['auth/hasToken']) {
     try {
+      console.log('ok')
       await store.dispatch('auth/ActionCheckToken')
 
       next({
@@ -19,10 +20,6 @@ export default async (to, from, next) => {
   } else if (to.name === 'pages-login' && store.getters['auth/hasToken']) {
     next({
       name: 'dashboard',
-    })
-  } else if (to.name === 'pages-register' && store.getters['auth/hasToken']) {
-    next({
-      name: 'pages-register',
     })
   } else {
     next()

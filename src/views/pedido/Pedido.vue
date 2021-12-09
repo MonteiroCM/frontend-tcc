@@ -42,9 +42,25 @@
             Enviado
           </v-chip>
 
+          <v-chip color="success" text-color="white" @click="changeStatus('Entreque', item)">
+            Entreque
+          </v-chip>
+
           <v-chip color="error" text-color="white" @click="changeStatus('Cancelado', item)">
             Cancelar
           </v-chip>
+        </template>
+        <template v-slot:[`item.itens`]="{ item }">
+          <v-list>
+            <v-list-item
+              v-for="pedidoItem in item.PedidoItem"
+              :key="pedidoItem.id"
+            >
+              <v-list-item-content>
+                <v-list-item-title v-text="pedidoItem.quantidade +' - '+ pedidoItem.produto.nome+' - '+ pedidoItem.tamanho.nome"></v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
         </template>
         <template v-slot:no-data>
           <nodata></nodata>
@@ -100,6 +116,16 @@ export default {
         text: 'Status',
         sortable: false,
         value: 'status',
+      },
+      {
+        text: 'Cliente',
+        sortable: false,
+        value: 'User.nome',
+      },
+      {
+        text: 'Itens',
+        value: 'itens',
+        sortable: false,
       },
       {
         text: 'Actions',

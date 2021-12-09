@@ -191,10 +191,10 @@
           <div class="d-flex justify-space-between ">
             <div>
               <v-card-text class="text--primary text-base">
-                <span class="pt-5">Pedido Realizado</span>
+                <v-img width="220" height="100%" src="https://consorciomagalu.com.br/wp-content/uploads/2020/07/verificado-1.png"></v-img>
+                <span class="pt-5">Parabéns, seu pedido foi realizado com sucesso!</span>
                 <v-divider></v-divider>
-                {{ enderecoPagamento }}
-                {{ formaPagamento.nome }}
+                Obrigado
               </v-card-text>
               <v-card-actions class="d-flex justify-space-between dense">
                 <v-btn text color="primary" dark @click="finalizarCompra(itemsComprados, 0)">

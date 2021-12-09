@@ -113,8 +113,8 @@ export default {
     isLogin: true,
     isLoading: false,
     user: {
-      email: 'Admin@admin.com.br',
-      password: '123456',
+      email: '',
+      password: '',
       nome: '',
     },
   }),

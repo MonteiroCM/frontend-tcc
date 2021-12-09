@@ -80,6 +80,7 @@
               block
               color="primary"
               class="mt-6"
+              @click="submit"
             >
               Sign Up
             </v-btn>
@@ -103,7 +104,7 @@
           <v-divider></v-divider>
         </v-card-text>
 
-        <!-- social link -->
+        <!-- social link
         <v-card-actions class="d-flex justify-center">
           <v-btn
             v-for="link in socialLink"
@@ -115,7 +116,7 @@
               {{ link.icon }}
             </v-icon>
           </v-btn>
-        </v-card-actions>
+        </v-card-actions>-->
       </v-card>
     </div>
 
@@ -148,6 +149,7 @@
 // eslint-disable-next-line object-curly-newline
 import { mdiGoogle, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 import { ref } from '@vue/composition-api'
+import { mapActions } from 'vuex'
 
 export default {
   setup() {
@@ -175,6 +177,28 @@ export default {
         mdiEyeOffOutline,
       },
     }
+  },
+  methods: {
+    ...mapActions('auth', ['CriarUsuario']),
+    async submit() {
+      this.isLoading = true
+      console.log('this.email ->', this.email)
+      try {
+        await this.CriarUsuario({
+          password: this.password,
+          email: this.email,
+          nome: this.username,
+        })
+        this.$router.push({
+          name: 'pages-login',
+        })
+      } catch (error) {
+        console.log('error', error)
+        this.error = error.data ? error.data.message : 'Não foi possivel criar usuario'
+      } finally {
+        console.log('finally')
+      }
+    },
   },
 }
 </script>
