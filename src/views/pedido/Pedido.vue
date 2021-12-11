@@ -57,7 +57,7 @@
               :key="pedidoItem.id"
             >
               <v-list-item-content>
-                <v-list-item-title v-text="pedidoItem.quantidade +' - '+ pedidoItem.produto.nome+' - '+ pedidoItem.tamanho.nome"></v-list-item-title>
+                <v-list-item-title v-text="pedidoItem.quantidade +' - '+ pedidoItem.produto.nome"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list>

@@ -77,7 +77,7 @@
                       <v-col>
                         <v-text-field
                           v-model="editedItem.descricao"
-                          label="Descrião"
+                          label="Descrição"
                           outlined
                           dense
                           placeholder="Descrição do Produto"
@@ -91,7 +91,7 @@
                         <v-select
                           v-model="editedItem.categoria_id"
                           nome="categoria"
-                          label="nome"
+                          label="Categoria"
                           :items="categorias"
                           item-text="nome"
                           item-value="id"
