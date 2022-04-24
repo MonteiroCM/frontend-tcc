@@ -86,6 +86,8 @@ export default {
       Cancelado: 'error',
       Preparando: 'warning',
       Realizado: 'info',
+      Entreque: 'Entreque',
+      Aberto: 'Aberto',
     }
 
     return {

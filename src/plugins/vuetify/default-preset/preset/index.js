@@ -11,6 +11,8 @@ export default {
         info: '#16B1FF',
         warning: '#FFB400',
         error: '#FF4C51',
+        Entreque: '#3DD49A',
+        Aberto: '#bfbc78',
       },
       dark: {
         primary: '#9155FD',
@@ -20,6 +22,8 @@ export default {
         info: '#16B1FF',
         warning: '#FFB400',
         error: '#FF4C51',
+        Entreque: '#3DD49A',
+        Aberto: '#bfbc78',
       },
     },
   },

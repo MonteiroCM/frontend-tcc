@@ -293,7 +293,7 @@ export default {
       this.formaPagamento = item
     },
     selectEndereco(item) {
-      this.enderecoPagamento = item.id
+      this.enderecoPagamento = `${item.rua}, ${item.numero}  ${item.bairro} ${item.cidade}`
     },
     comprar(item) {
       let tem = 0

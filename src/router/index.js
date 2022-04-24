@@ -36,6 +36,24 @@ const routes = [
     component: () => import('@/views/cards/Card.vue'),
   },
   {
+    path: '/relgeral',
+    name: 'Geral',
+
+    component: () => import('@/views/estatistica/Geral.vue'),
+  },
+  {
+    path: '/porano',
+    name: 'PorAno',
+
+    component: () => import('@/views/estatistica/PorAno.vue'),
+  },
+  {
+    path: '/porpedido',
+    name: 'PorPedido',
+
+    component: () => import('@/views/estatistica/PorPedido.vue'),
+  },
+  {
     path: '/categoria',
     name: 'categorias',
 

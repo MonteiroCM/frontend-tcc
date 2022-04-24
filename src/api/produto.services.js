@@ -5,6 +5,11 @@ export default {
   listaProdutos: filtro => http.get('produtos', {
     filtro,
   }),
+  listaEstatistica: filtro => http.post(`produtos/estatistica/${filtro.codigo}`, {
+    filtro: {
+      mes: filtro.mes, ano: filtro.ano,
+    },
+  }),
   addProdutos: produto => http.post('produtos', {
     produto,
   }),

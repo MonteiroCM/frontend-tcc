@@ -2,7 +2,7 @@
   <div>
     <v-card>
       <v-card-title class="align-start">
-        <span>Vendas Mensais</span>
+        <span>{{ tituloRelatorio }}</span>
 
         <v-spacer></v-spacer>
 
@@ -22,33 +22,7 @@
         <vue-apex-charts
           :options="chartOptions"
           :series="chartData"
-          height="210"
-        ></vue-apex-charts>
-      </v-card-text>
-    </v-card>
-    <v-card>
-      <v-card-title class="align-start">
-        <span>Weekly Overview</span>
-
-        <v-spacer></v-spacer>
-
-        <v-btn
-          icon
-          small
-          class="mt-n2 me-n3"
-        >
-          <v-icon size="22">
-            {{ icons.mdiDotsVertical }}
-          </v-icon>
-        </v-btn>
-      </v-card-title>
-
-      <v-card-text>
-        <!-- Chart -->
-        <vue-apex-charts
-          :options="chartOptions"
-          :series="chartData"
-          height="210"
+          height="380"
         ></vue-apex-charts>
       </v-card-text>
     </v-card>
@@ -64,11 +38,25 @@ export default {
   components: {
     VueApexCharts,
   },
-  setup() {
+  props: {
+    valuesCategories: {
+      type: Array,
+      default: null,
+    },
+    chartData: {
+      type: Array,
+      default: null,
+    },
+    tituloRelatorio: {
+      type: String,
+      default: 'null',
+    },
+  },
+  setup(props) {
     const chartOptions = {
       colors: [
         '#5da8ae',
-        '#ffff00',
+        '#33c4e3',
         '#e7c602',
         '#e7b40d',
         '#ffc220',
@@ -85,7 +73,7 @@ export default {
         '#29166f',
         '#14498d',
         '#0c5d7b',
-        '#33c4e3',
+        '#ffff00',
         '#1ea1f3',
         '#134bac',
         '#5e4119',
@@ -177,73 +165,14 @@ export default {
         '#0d3a13',
       ],
       chart: {
-        type: 'bar',
-        toolbar: {
-          show: false,
-        },
-        offsetX: -15,
+        type: 'pie',
+        with: 380,
       },
-      plotOptions: {
-        bar: {
-          columnWidth: '40%',
-          distributed: true,
-          borderRadius: 8,
-          startingShape: 'rounded',
-          endingShape: 'rounded',
-        },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      legend: {
-        show: false,
-      },
-      xaxis: {
-        categories: ['JAN', 'FEV', 'MAR', 'ABR', 'MAIO', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'],
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-        tickPlacement: 'on',
-        labels: {
-          show: true,
-          style: {
-            fontSize: '12px',
-          },
-        },
-      },
-      yaxis: {
-        show: true,
-        tickAmount: 4,
-        labels: {
-          offsetY: 3,
-          formatter: value => `$${value}`,
-        },
-      },
-      stroke: {
-        width: [2, 2],
-      },
-      grid: {
-        strokeDashArray: 12,
-        padding: {
-          right: 0,
-        },
-      },
+      labels: props.valuesCategories,
     }
-
-    const chartData = [
-      {
-        name: 'Vendas',
-        data: [20, 20, 50, 60, 75, 60, 50, 65, 78, 89, 90, 65],
-      },
-    ]
 
     return {
       chartOptions,
-      chartData,
-
       icons: {
         mdiDotsVertical,
         mdiTrendingUp,

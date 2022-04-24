@@ -23,6 +23,11 @@
     <v-list expand shaped class="vertical-nav-menu-items pr-5">
       <nav-menu-link title="Menu" :to="{ name: 'loja' }" :icon="icons.mdiHomeOutline"></nav-menu-link>
       <nav-menu-link title="Dashboard" :to="{ name: 'dashboard' }" :icon="icons.mdiHomeOutline"></nav-menu-link>
+      <nav-menu-group v-if="user.tipo == 'ADMIN'" title="Pages" :icon="icons.mdiFileOutline">
+        <nav-menu-link title="Geral" :to="{ name: 'Geral' }"></nav-menu-link>
+        <nav-menu-link title="Por Ano" :to="{ name: 'PorAno' }"></nav-menu-link>
+        <nav-menu-link title="Por Pedido" :to="{ name: 'PorPedido' }"></nav-menu-link>
+      </nav-menu-group>
       <nav-menu-link v-if="user.tipo == 'ADMIN'" title="Pedidos" :to="{ name: 'pedidos' }" :icon="icons.mdiArchive"></nav-menu-link>
       <nav-menu-link v-if="user.tipo == 'ADMIN'" title="Categorias" :to="{ name: 'categorias' }" :icon="icons.mdiCreditCardOutline"></nav-menu-link>
       <nav-menu-link v-if="user.tipo == 'ADMIN'" title="Tamanhos" :to="{ name: 'tamanhos' }" :icon="icons.mdiArchive"></nav-menu-link>

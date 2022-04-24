@@ -2,33 +2,7 @@
   <div>
     <v-card>
       <v-card-title class="align-start">
-        <span>Vendas Mensais</span>
-
-        <v-spacer></v-spacer>
-
-        <v-btn
-          icon
-          small
-          class="mt-n2 me-n3"
-        >
-          <v-icon size="22">
-            {{ icons.mdiDotsVertical }}
-          </v-icon>
-        </v-btn>
-      </v-card-title>
-
-      <v-card-text>
-        <!-- Chart -->
-        <vue-apex-charts
-          :options="chartOptions"
-          :series="chartData"
-          height="210"
-        ></vue-apex-charts>
-      </v-card-text>
-    </v-card>
-    <v-card>
-      <v-card-title class="align-start">
-        <span>Weekly Overview</span>
+        <span>{{ tituloRelatorio }}</span>
 
         <v-spacer></v-spacer>
 
@@ -64,7 +38,21 @@ export default {
   components: {
     VueApexCharts,
   },
-  setup() {
+  props: {
+    valuesCategories: {
+      type: Array,
+      default: null,
+    },
+    chartData: {
+      type: Array,
+      default: null,
+    },
+    tituloRelatorio: {
+      type: String,
+      default: 'null',
+    },
+  },
+  setup(props) {
     const chartOptions = {
       colors: [
         '#5da8ae',
@@ -199,7 +187,7 @@ export default {
         show: false,
       },
       xaxis: {
-        categories: ['JAN', 'FEV', 'MAR', 'ABR', 'MAIO', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'],
+        categories: props.valuesCategories,
         axisBorder: {
           show: false,
         },
@@ -219,7 +207,7 @@ export default {
         tickAmount: 4,
         labels: {
           offsetY: 3,
-          formatter: value => `$${value}`,
+          formatter: value => `${value}`,
         },
       },
       stroke: {
@@ -233,17 +221,8 @@ export default {
       },
     }
 
-    const chartData = [
-      {
-        name: 'Vendas',
-        data: [20, 20, 50, 60, 75, 60, 50, 65, 78, 89, 90, 65],
-      },
-    ]
-
     return {
       chartOptions,
-      chartData,
-
       icons: {
         mdiDotsVertical,
         mdiTrendingUp,
