@@ -24,8 +24,8 @@
       <nav-menu-link title="Menu" :to="{ name: 'loja' }" :icon="icons.mdiHomeOutline"></nav-menu-link>
       <nav-menu-link title="Dashboard" :to="{ name: 'dashboard' }" :icon="icons.mdiHomeOutline"></nav-menu-link>
       <nav-menu-group v-if="user.tipo == 'ADMIN'" title="Pages" :icon="icons.mdiFileOutline">
-        <nav-menu-link title="Geral" :to="{ name: 'Geral' }"></nav-menu-link>
-        <nav-menu-link title="Por Ano" :to="{ name: 'PorAno' }"></nav-menu-link>
+        <nav-menu-link title="Relatório Financeiro" :to="{ name: 'Geral' }"></nav-menu-link>
+        <nav-menu-link title="Relatório Relacional" :to="{ name: 'PorAno' }"></nav-menu-link>
         <nav-menu-link title="Por Pedido" :to="{ name: 'PorPedido' }"></nav-menu-link>
       </nav-menu-group>
       <nav-menu-link v-if="user.tipo == 'ADMIN'" title="Pedidos" :to="{ name: 'pedidos' }" :icon="icons.mdiArchive"></nav-menu-link>

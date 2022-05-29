@@ -30,4 +30,12 @@ export default {
     state.estatisticaformapagamento = payload
   },
 
+  [types.SET_BEST_CLIENTES](state, payload) {
+    state.bestclientes = payload
+  },
+
+  [types.SET_ESTATISTICA_BASICA](state, payload) {
+    state.estatisticabasica = payload
+  },
+
 }

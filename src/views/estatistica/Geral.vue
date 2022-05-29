@@ -116,13 +116,11 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
-import DashboardWeeklyOverview from './DashboardWeeklyOverview.vue'
 import Pie from './Pie.vue'
 import Linhas from './Linhas.vue'
 
 export default {
   components: {
-    DashboardWeeklyOverview,
     Pie,
     Linhas,
   },

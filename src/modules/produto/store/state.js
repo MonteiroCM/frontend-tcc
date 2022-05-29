@@ -7,4 +7,6 @@ export default {
   line: [],
   estatisticavalor: [],
   estatisticaformapagamento: [],
+  bestclientes: [],
+  estatisticabasica: [],
 }

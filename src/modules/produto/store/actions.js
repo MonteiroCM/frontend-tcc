@@ -39,6 +39,32 @@ export const ActionEstatisticaValor = (context, payload) => {
   })
 }
 
+export const ActionListBestClientes = (context, payload) => {
+  const { commit } = context
+  const { codigo } = payload
+  console.log('codigo > ', codigo)
+
+  return services.listaEstatistica({
+    codigo,
+  }).then(res => {
+    console.log('res', res.data)
+    commit(types.SET_BEST_CLIENTES, res.data)
+  })
+}
+
+export const ActionListEstatisticaBasica = (context, payload) => {
+  const { commit } = context
+  const { codigo } = payload
+  console.log('codigo > ', codigo)
+
+  return services.listaEstatistica({
+    codigo,
+  }).then(res => {
+    console.log('res', res.data)
+    commit(types.SET_ESTATISTICA_BASICA, res.data)
+  })
+}
+
 export const ActionEstatisticaPie = (context, payload) => {
   const { commit } = context
   const { codigo, mes, ano } = payload

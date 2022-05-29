@@ -2,9 +2,20 @@
 const { http } = require('../config/api')
 
 export default {
-  listaPedidos: filtro => http.get('pedidos', {
-    filtro,
-  }),
+  listaPedidos: filtro => {
+    console.log('1 filtro -', filtro)
+
+    return http.get('pedidos', {
+      filtro,
+    })
+  },
+  listaPedidosFiltro: filtro => {
+    console.log('2 filtro -', filtro)
+
+    return http.post('pedidosfiltro', {
+      filtro: filtro.filtro,
+    })
+  },
   addPedidos: pedido => http.post('pedidos', {
     pedido,
   }),

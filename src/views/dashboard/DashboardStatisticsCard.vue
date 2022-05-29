@@ -22,7 +22,7 @@
     <v-card-text>
       <v-row>
         <v-col
-          v-for="data in statisticsData"
+          v-for="data in estatisticabasica"
           :key="data.title"
           cols="6"
           md="3"
@@ -44,7 +44,7 @@
           </v-avatar>
           <div class="ms-3">
             <p class="text-xs mb-0">
-              {{ data.title }}
+              {{ renomear(data.title) }}
             </p>
             <h3 class="text-xl font-weight-semibold">
               {{ data.total }}
@@ -57,47 +57,56 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
 // eslint-disable-next-line object-curly-newline
 import { mdiAccountOutline, mdiCurrencyUsd, mdiTrendingUp, mdiDotsVertical, mdiLabelOutline } from '@mdi/js'
 
 export default {
+  computed: {
+    ...mapState('produto', ['estatisticabasica']),
+  },
+  mounted() {
+    this.ActionListEstatisticaBasica({
+      codigo: 0,
+    })
+  },
+  methods: {
+    ...mapActions('produto', ['ActionListEstatisticaBasica']),
+  },
   setup() {
-    const statisticsData = [
-      {
-        title: 'Vendas',
-        total: '350',
-      },
-      {
-        title: 'Clientes',
-        total: '150',
-      },
-      {
-        title: 'Produtos',
-        total: '10',
-      },
-      {
-        title: 'Categorias',
-        total: '34',
-      },
-    ]
+    const renomear = data => {
+      if (data === 'pedidos') {
+        return 'Pedidos'
+      }
+      if (data === 'usuarios') {
+        return 'Clientes'
+      }
+      if (data === 'produtos') {
+        return 'Produtos'
+      }
+      if (data === 'pedido_dia') {
+        return 'Pedidos do Dia'
+      }
 
+      return data
+    }
     const resolveStatisticsIconVariation = data => {
-      if (data === 'Vendas') {
+      if (data === 'pedidos') {
         return {
           icon: mdiTrendingUp, color: 'primary',
         }
       }
-      if (data === 'Clientes') {
+      if (data === 'usuarios') {
         return {
           icon: mdiAccountOutline, color: 'success',
         }
       }
-      if (data === 'Produtos') {
+      if (data === 'produtos') {
         return {
           icon: mdiLabelOutline, color: 'warning',
         }
       }
-      if (data === 'Categorias') {
+      if (data === 'pedido_dia') {
         return {
           icon: mdiCurrencyUsd, color: 'info',
         }
@@ -109,8 +118,8 @@ export default {
     }
 
     return {
-      statisticsData,
       resolveStatisticsIconVariation,
+      renomear,
 
       // icons
       icons: {

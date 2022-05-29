@@ -4,10 +4,25 @@ import * as types from './mutation-types'
 // eslint-disable-next-line import/prefer-default-export
 export const ActionListPedido = (context, payload) => {
   const { commit } = context
-  const { mesAno } = payload
-  console.log(mesAno)
+  const { mesAno, filtro } = payload
+  console.log(mesAno, filtro)
 
-  return services.listaPedidos().then(res => {
+  return services.listaPedidos({
+    filtro,
+  }).then(res => {
+    console.log('res', res.data)
+    commit(types.SET_PEDIDOS, res.data)
+  })
+}
+
+export const ActionListPedidoFiltro = (context, payload) => {
+  const { commit } = context
+  const { filtro } = payload
+  console.log('ActionListPedidoFiltro 3', filtro)
+
+  return services.listaPedidosFiltro({
+    filtro,
+  }).then(res => {
     console.log('res', res.data)
     commit(types.SET_PEDIDOS, res.data)
   })

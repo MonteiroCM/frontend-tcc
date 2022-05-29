@@ -33,6 +33,14 @@
         <!-- login form -->
         <v-card-text>
           <v-form>
+            <v-alert
+              v-if="isError"
+              border="top"
+              color="red"
+              type="error"
+            >
+              Login e/ou senha incorreto(a)
+            </v-alert>
             <v-text-field
               v-model="user.email"
               outlined
@@ -111,6 +119,7 @@ import { ref } from '@vue/composition-api'
 export default {
   data: () => ({
     isLogin: true,
+    isError: false,
     isLoading: false,
     user: {
       email: '',
@@ -169,6 +178,7 @@ export default {
         })
       } catch (error) {
         console.log('error', error)
+        this.isError = true
         this.error = error.data ? error.data.message : 'Não foi possivel conectar'
         this.showSnackBar = true
       } finally {

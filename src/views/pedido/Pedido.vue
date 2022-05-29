@@ -18,6 +18,11 @@
             <v-spacer></v-spacer>
           </v-toolbar>
         </template>
+        <template v-slot:[`item.data_pedido`]="{ item }">
+          {{
+            item.data_pedido.split('-')[2] + "/" + item.data_pedido.split('-')[1] + "/" + item.data_pedido.split('-')[0]
+          }}
+        </template>
         <template v-slot:[`item.ativo`]="{ item }">
           <v-simple-checkbox v-model="item.ativo" disabled></v-simple-checkbox>
         </template>
@@ -169,6 +174,9 @@ export default {
   mounted() {
     this.ActionListPedido({
       mesano: 0,
+      filtro: {
+        inicial: 'hoje', final: 'hoje',
+      },
     })
     this.ActionListCategoria({
       mesano: 0,
@@ -184,6 +192,9 @@ export default {
       console.log('initialize')
       this.ActionListPedido({
         mesano: 0,
+        filtro: {
+          inicial: 'hoje', final: 'hoje',
+        },
       })
     },
 

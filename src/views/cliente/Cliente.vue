@@ -17,11 +17,6 @@
             <v-divider class="mx-4" inset vertical></v-divider>
             <v-spacer></v-spacer>
             <v-dialog v-model="dialog" max-width="600px">
-              <template v-slot:activator="{ on, attrs }">
-                <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
-                  Novo
-                </v-btn>
-              </template>
               <v-card>
                 <v-card-title>
                   <span class="text-h5">{{ formTitle }}</span>
@@ -82,16 +77,6 @@
         <template v-slot:[`item.ativo`]="{ item }">
           <v-simple-checkbox v-model="item.ativo" disabled></v-simple-checkbox>
         </template>
-        <template v-slot:[`item.actions`]="{ item }">
-          <div>
-            <v-icon color="info" x-large @click="editItem(item)">
-              {{ icons.mdiPencil }}
-            </v-icon>
-            <v-icon color="error" x-large @click="deleteItem(item)">
-              {{ icons.mdiDelete }}
-            </v-icon>
-          </div>
-        </template>
         <template v-slot:no-data>
           <nodata></nodata>
         </template>
@@ -129,9 +114,6 @@ export default {
       },
       {
         text: 'E-mail', value: 'email',
-      },
-      {
-        text: 'Actions', value: 'actions', sortable: false,
       },
     ],
     clienteItems: [],
