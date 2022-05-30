@@ -15,12 +15,6 @@
       cols="12"
       md="12"
     >
-      <dashboard-weekly-overview
-        :values-categories="['JAN', 'FEV', 'MAR', 'ABR', 'MAIO', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ']"
-        :chart-data="estatistica"
-        titulo-relatorio="Vendas Gerais (Quantidades de pedidos) - por mês"
-      >
-      </dashboard-weekly-overview>
     </v-col>
     <v-col
       cols="12"

@@ -13,7 +13,7 @@
       >
         <template v-slot:top>
           <v-toolbar flat>
-            <v-toolbar-title>Pedidos</v-toolbar-title>
+            <v-toolbar-title>Pedidos do {{ dia }}</v-toolbar-title>
             <v-divider class="mx-4" inset vertical></v-divider>
             <v-spacer></v-spacer>
           </v-toolbar>
@@ -100,6 +100,7 @@ export default {
     }
   },
   data: () => ({
+    dia: new Date(),
     nome: '',
     dialog: false,
     dialogDelete: false,
