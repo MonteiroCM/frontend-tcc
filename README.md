@@ -1,55 +1,61 @@
-<p align="center"></p>
+# NEED FOOD - FrondEnd 
 
-<p align="center">
-   <a href="https://themeselection.com/products/materio-free-vuetify-vuejs-admin-template" target="_blank">
-      <img src="src/assets/images/logos/logo.svg" alt="materio-logo" width="60px" height="auto"> 
-      <img src="https://br.vuejs.org/images/logo.svg" alt="materio-logo" width="60px" height="auto">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Love_Heart_SVG.svg" alt="materio-logo" width="60px" height="auto">
-      
-   </a>
-</p>
+System developed for completion of graduate degree
 
-<h1 align="center">
-   <a href="https://themeselection.com/products/materio-free-vuetify-vuejs-admin-template" target="_blank" align="center">
-      NEED FOOD
-   </a>
-</h1>
+## Tools used
 
-<p align="center">Production ready carefully crafted most comprehensive admin template</p>
+[![NPM][npm-image]][npm-url]
+[![NodeJS][nodejs-image]][nodejs-url]
+[![Vuetify][Vuetify-image]][Vuetify-url]
+[![Vue.js][Vuejs-image]][Vuejs-url]
+[![JavaScript][JavaScript-image]][JavaScript-url]
+[![AWS][AWS-image]][AWS-url]
+[![Visual Studio Code][VisualStudioCode-image]][VisualStudioCode-url]
 
 
-## Introduction
+## Installation
 
-If you’re a developer looking for an admin dashboard that is developer-friendly, rich with features, and highly customizable look no further than Materio. We’ve followed the highest industry standards to bring you the very best admin template that is not only fast and easy to use but highly scalable. Offering ultimate convenience and flexibility, you’ll be able to build whatever application you want with very little hassle.
+run:
 
-Build premium quality applications with ease. Use our innovative admin template to create eye-catching, high-quality, and high-performing single-page applications. Your apps will be completely responsive, ensuring they’ll look stunning and function flawlessly on desktops, tablets, and mobile devices.
+```sh
+npm i
+```
 
-[View Demo](https://themeselection.com/demo/materio-vuetify-vuejs-admin-template-free/demo/)
+## Development server 
 
-## Installation ⚒️
+Run `npm run serve` for a dev server. Navigate to `http://localhost:8080/`. The app will automatically reload if you change any of the source files.
 
-> We recommend you use yarn
+## Release History
 
-1. Install all packages
+* 0.1.1
+    * CHANGE: Update Layout
 
-   ```bash
-   yarn
 
-   # npm install [for npm]
-   ```
+## Meta
 
-2. Run development server
+Bring knowledge about new technologies
 
-   ```bash
-   yarn serve
+## Contributing
 
-   # npm run serve [for npm]
-   ```
+1. Vuetify (<https://github.com/yourname/yourproject/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
 
-3. Generate build files for deployment
+<!-- Markdown link & img dfn's -->
+[npm-image]: https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white
+[nodejs-image]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white
+[Vuetify-image]: https://img.shields.io/badge/Vuetify-1867C0?style=for-the-badge&logo=vuetify&logoColor=AEDDFF
+[Vuejs-image]:https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D
+[JavaScript-image]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
+[AWS-image]: https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white
+[VisualStudioCode-image]: https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white
 
-   ```bash
-   yarn build
-
-   # npm run build [for npm]
-   ```
+[npm-url]:https://www.npmjs.com/package/datadog-metrics
+[nodejs-url]:https://nodejs.org/en/
+[Vuetify-url]:https://vuetifyjs.com/en/
+[Vuejs-url]:https://vuejs.org/
+[JavaScript-url]:https://developer.mozilla.org/pt-BR/docs/Web/JavaScript
+[AWS-url]:https://aws.amazon.com/
+[VisualStudioCode-url]:https://code.visualstudio.com/
