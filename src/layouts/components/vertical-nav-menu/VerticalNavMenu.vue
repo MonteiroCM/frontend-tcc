@@ -29,6 +29,7 @@
         <nav-menu-link title="Por Pedido" :to="{ name: 'PorPedido' }"></nav-menu-link>
       </nav-menu-group>
       <nav-menu-link v-if="user.tipo == 'ADMIN'" title="Pedidos" :to="{ name: 'pedidos' }" :icon="icons.mdiArchive"></nav-menu-link>
+      <nav-menu-link v-if="user.tipo != 'ADMIN'" title="Meus Pedidos" :to="{ name: 'meuspedidos' }" :icon="icons.mdiArchive"></nav-menu-link>
       <nav-menu-link v-if="user.tipo == 'ADMIN'" title="Categorias" :to="{ name: 'categorias' }" :icon="icons.mdiCreditCardOutline"></nav-menu-link>
       <nav-menu-link v-if="user.tipo == 'ADMIN'" title="Tamanhos" :to="{ name: 'tamanhos' }" :icon="icons.mdiArchive"></nav-menu-link>
       <nav-menu-link v-if="user.tipo == 'ADMIN'" title="Produto" :to="{ name: 'produtos' }" :icon="icons.mdiCreditCardOutline"></nav-menu-link>

@@ -13,7 +13,7 @@
       >
         <template v-slot:top>
           <v-toolbar flat>
-            <v-toolbar-title>Pedidos do {{ user.id }}</v-toolbar-title>
+            <v-toolbar-title>Meus Pedidos</v-toolbar-title>
             <v-divider class="mx-4" inset vertical></v-divider>
             <v-spacer></v-spacer>
           </v-toolbar>
@@ -135,11 +135,6 @@ export default {
         value: 'itens',
         sortable: false,
       },
-      {
-        text: 'Actions',
-        value: 'actions',
-        sortable: false,
-      },
     ],
     pedidoItems: [],
     editedIndex: -1,
@@ -175,7 +170,7 @@ export default {
     },
   },
   mounted() {
-    this.ActionListPedido({
+    this.ActionListPedidoFiltro({
       mesano: 0,
       filtro: {
         inicial: 'hoje', final: 'hoje', tipo: this.user.tipo, id: this.user.id,
@@ -189,14 +184,14 @@ export default {
     this.initialize()
   },
   methods: {
-    ...mapActions('pedido', ['ActionListPedido', 'ActionCriarPedido', 'ActionDeletePedido', 'ActionUpdatePedido']),
+    ...mapActions('pedido', ['ActionListPedidoFiltro']),
     ...mapActions('categoria', ['ActionListCategoria']),
     initialize() {
       console.log('initialize')
-      this.ActionListPedido({
+      this.ActionListPedidoFiltro({
         mesano: 0,
         filtro: {
-          inicial: 'hoje', final: 'hoje',
+          inicial: 'hoje', final: 'hoje', tipo: this.user.tipo, id: this.user.id,
         },
       })
     },

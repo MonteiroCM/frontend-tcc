@@ -72,6 +72,12 @@ const routes = [
     component: () => import('@/views/pedido/Pedido.vue'),
   },
   {
+    path: '/meuspedido',
+    name: 'meuspedidos',
+
+    component: () => import('@/views/pedido/MeuPedido.vue'),
+  },
+  {
     path: '/tamanho',
     name: 'tamanhos',
 

@@ -1,59 +1,68 @@
 <template>
-  <v-card>
-    <v-card-title class="align-start">
-      <span class="font-weight-semibold">Estatísticas</span>
-      <v-spacer></v-spacer>
-      <v-btn
-        icon
-        small
-        class="me-n3 mt-n2"
-      >
-        <v-icon>
-          {{ icons.mdiDotsVertical }}
-        </v-icon>
-      </v-btn>
-    </v-card-title>
-
-    <v-card-subtitle class="mb-8 mt-n5">
-      <span class="font-weight-semibold text--primary me-1">Total</span>
-      <span>😎</span>
-    </v-card-subtitle>
-
-    <v-card-text>
-      <v-row>
-        <v-col
-          v-for="data in estatisticabasica"
-          :key="data.title"
-          cols="6"
-          md="3"
-          class="d-flex align-center"
+  <div>
+    <v-card v-if="user.tipo == 'ADMIN'">
+      <v-card-title class="align-start">
+        <span class="font-weight-semibold">Estatísticas</span>
+        <v-spacer></v-spacer>
+        <v-btn
+          icon
+          small
+          class="me-n3 mt-n2"
         >
-          <v-avatar
-            size="44"
-            :color="resolveStatisticsIconVariation (data.title).color"
-            rounded
-            class="elevation-1"
+          <v-icon>
+            {{ icons.mdiDotsVertical }}
+          </v-icon>
+        </v-btn>
+      </v-card-title>
+
+      <v-card-subtitle class="mb-8 mt-n5">
+        <span class="font-weight-semibold text--primary me-1">Total</span>
+        <span>😎</span>
+      </v-card-subtitle>
+
+      <v-card-text>
+        <v-row>
+          <v-col
+            v-for="data in estatisticabasica"
+            :key="data.title"
+            cols="6"
+            md="3"
+            class="d-flex align-center"
           >
-            <v-icon
-              dark
-              color="white"
-              size="30"
+            <v-avatar
+              size="44"
+              :color="resolveStatisticsIconVariation (data.title).color"
+              rounded
+              class="elevation-1"
             >
-              {{ resolveStatisticsIconVariation (data.title).icon }}
-            </v-icon>
-          </v-avatar>
-          <div class="ms-3">
-            <p class="text-xs mb-0">
-              {{ renomear(data.title) }}
-            </p>
-            <h3 class="text-xl font-weight-semibold">
-              {{ data.total }}
-            </h3>
-          </div>
-        </v-col>
-      </v-row>
-    </v-card-text>
-  </v-card>
+              <v-icon
+                dark
+                color="white"
+                size="30"
+              >
+                {{ resolveStatisticsIconVariation (data.title).icon }}
+              </v-icon>
+            </v-avatar>
+            <div class="ms-3">
+              <p class="text-xs mb-0">
+                {{ renomear(data.title) }}
+              </p>
+              <h3 class="text-xl font-weight-semibold">
+                {{ data.total }}
+              </h3>
+            </div>
+          </v-col>
+        </v-row>
+      </v-card-text>
+    </v-card>
+    <div v-if="user.tipo != 'ADMIN'">
+      Para Efetuar sua compra clique no Item "Menu" a sua esquerda.
+    </div>
+    <v-img
+      lazy-src="https://onlinequadros.com.br/static/acc/artist/ART-25657/gallery/61449/ART-25657_9UblQKMlhXWO6hVGQTnj.jpg"
+      src="https://onlinequadros.com.br/static/acc/artist/ART-25657/gallery/61449/ART-25657_9UblQKMlhXWO6hVGQTnj.jpg"
+    ></v-img>
+  </div>
 </template>
 
 <script>
@@ -64,6 +73,7 @@ import { mdiAccountOutline, mdiCurrencyUsd, mdiTrendingUp, mdiDotsVertical, mdiL
 export default {
   computed: {
     ...mapState('produto', ['estatisticabasica']),
+    ...mapState('auth', ['user']),
   },
   mounted() {
     this.ActionListEstatisticaBasica({
